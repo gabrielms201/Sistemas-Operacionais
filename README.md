@@ -5,7 +5,7 @@ Repositório da faculdade - 04N11
 
 |Participante                              |     TIA    |
 |------------------------------------------|------------|
-|             |    |
+|Gabriel Augusto Ribeiro Gomes             | 32134762   |
 |             |    |
 |Ricardo Gabriel Marques dos Santos Ruiz   | 31234908   |
 ---
