@@ -37,7 +37,7 @@ make
 ```
 > Quantas chamadas de sistemas foram realizadas?
 
-Foram realizadas diversas chamadas de sistema após a execução do código (todas disponíveis na em: [Lab01b-IntroducaoLinux/HandmadeCat/syscalls.txt](Lab01b-IntroducaoLinux/HandmadeCat/syscalls.txt))
+Foram realizadas diversas chamadas de sistema após a execução do código (todas disponíveis em: [Lab01b-IntroducaoLinux/HandmadeCat/syscalls.txt](Lab01b-IntroducaoLinux/HandmadeCat/syscalls.txt))
 
 Dentre as syscalls, foram realizadas chamas de **open()** (abrir o arquivo), **read()** (leitura de arquivo), **write()** (imprimir na tela), **close()** (fechar o arquivo)
 
