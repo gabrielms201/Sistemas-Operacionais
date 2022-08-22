@@ -26,8 +26,7 @@ Quantas chamadas de sistemas foram realizadas?
 Dica de arquivos em C: https://www.ime.usp.br/~pf/algoritmos/aulas/io.html
 ```
 1-) Código se encontra em: 
-
-**Lab01b-IntroducaoLinux/HandmadeCat/HandmadeCat.c**, junto com o seu MakeFile e seu arquivo de exemplo
+**[Lab01b-IntroducaoLinux/HandmadeCat/HandmadeCat.c](Lab01b-IntroducaoLinux/HandmadeCat/HandmadeCat.c)**, junto com o seu MakeFile e seu arquivo de exemplo (text.txt)
 
 Para compilar/rodar o programa:
 No diretório do programa:
@@ -36,7 +35,11 @@ No diretório do programa:
 make
 ./HandmadeCat text.txt
 ```
+> Quantas chamadas de sistemas foram realizadas?
 
+Foram realizadas diversas chamadas de sistema após a execução do código (todas disponíveis na em: [Lab01b-IntroducaoLinux/HandmadeCat/syscalls.txt](Lab01b-IntroducaoLinux/HandmadeCat/syscalls.txt))
+
+Dentre as syscalls, foram realizadas chamas de **open()** (abrir o arquivo), **read()** (leitura de arquivo), **write()** (imprimir na tela), **close()** (fechar o arquivo)
 
 
 ```
