@@ -6,9 +6,9 @@ Sim, rodando o programa utilizando o **stderr** como streaming de saída o "i" f
 
 
 > 2 O que acontece se o programa anterior escreve-se as mensagens
-para sys.stdout, usando print, ao inv ́es de para sys.stderr
+para sys.stdout, usando print, ao invés de para sys.stderr
 
 Não, rodando o programa utilizando o **stdout** como streaming de saída o "i" **não** fica totalmente em ordem todas as vezes. Utilizamos para n = 10000. 
-Nosso output pode ser visto em [stdout_test.txt](stdout_test.txt).
+Nosso output pode ser visto em [stdout_test.txt](stdout_test.txt) (**últimas linhas da execução**).
 
 Por conta do buffer, podemos ter problemas na hora de imprimir esses dados, já que diferente da stream do **stderr**, a **stdout** é bufferizada. Uma maneira de evitar isso é chamando o método **fflush()** para resolver o problema.
