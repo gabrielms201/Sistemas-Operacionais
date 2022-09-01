@@ -9,6 +9,9 @@ Sim, rodando o programa utilizando o **stderr** como streaming de saída o "i" f
 para sys.stdout, usando print, ao invés de para sys.stderr
 
 Não, rodando o programa utilizando o **stdout** como streaming de saída o "i" **não** fica totalmente em ordem todas as vezes. Utilizamos para n = 10000. 
-Nosso output pode ser visto em [stdout_test.txt](stdout_test.txt) (**últimas linhas da execução**).
+Nosso output pode ser visto em [stdout_test.txt](stdout_test.txt) (**últimas linhas da execução**). Pode ser confirmado com:
+```
+tail -n 10 stdout_test.txt
+```
 
 Por conta do buffer, podemos ter problemas na hora de imprimir esses dados, já que diferente da stream do **stderr**, a **stdout** é bufferizada. Uma maneira de evitar isso é chamando o método **fflush()** para resolver o problema.
