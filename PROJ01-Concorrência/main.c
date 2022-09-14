@@ -1,9 +1,10 @@
 #include "main.h"
 
+// Global pre processor defines
 #define TIME_TO_THINK 2
 #define TIME_TO_EAT 1
 #define PHILOSOPHER_COUNT 5
-
+// Global variables
 Philosopher* philosophers;
 int mutex;
 int semaphores;
@@ -41,8 +42,17 @@ int main(int argc, char** argv)
     // Start working foreach process
     startWorking(pid);
 }
+void afterFinish()
+{
+    // This fucntion is called after a term signal. 
+    // Then we each philosopher's info
+    printf("\n");
+    printPhilosopherInfo(&(philosophers[processCounter]));
+    exit(0);
+}
 void work()
 {
+    signal(SIGINT, afterFinish);
     // While he didn't eat
     logger(SIMPLE, 0, "Started Working");
     while (true)
@@ -201,9 +211,9 @@ int sems_up(int sem, int isMutex) // https://man7.org/linux/man-pages/man2/semop
     semops.sem_flg = 0;
     int err;
     if (isMutex)
-        err = semop(semaphores, &semops, 1);
-    else
         err = semop(mutex, &semops, 1);
+    else
+        err = semop(semaphores, &semops, 1);
     return err;
 }
 int sems_down(int sem, int isMutex) // https://man7.org/linux/man-pages/man2/semop.2.html
@@ -214,8 +224,8 @@ int sems_down(int sem, int isMutex) // https://man7.org/linux/man-pages/man2/sem
     semops.sem_flg = 0;
     int err;
     if (isMutex)
-        err = semop(semaphores, &semops, 1);
-    else
         err = semop(mutex, &semops, 1);
+    else
+        err = semop(semaphores, &semops, 1);
     return err;
 }
