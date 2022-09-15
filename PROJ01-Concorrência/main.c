@@ -1,3 +1,7 @@
+//Gabriel Augusto      TIA: 32134762
+//Paulo Henrique Braga TIA: 32151128
+//Ricardo Gabriel      TIA: 31234908
+
 #include "main.h"
 
 // Global pre processor defines
