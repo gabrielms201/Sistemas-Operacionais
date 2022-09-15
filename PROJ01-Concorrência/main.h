@@ -38,6 +38,7 @@ typedef struct
 
 // Function declarations
 // Utils
+
 void logger(LogLevel level, int pid, const char* message);
 void printPhilosophers(Philosopher const * arr, int size);
 const char* stateToString(State state);
@@ -46,16 +47,19 @@ void fillPhilosophers(int quantity);
 void afterFinish();
 
 // Philosophers actions
+
 void tryToEat(int philosopherProcess);
 void grabForks();
 void dropForks();
 
 // Processes related
+
 void work();
 void startWorking(int isMain);
 int createProcesses();
 
 // Semaphores and mutex semaphores
+
 int sems_down(int sem, int isMutex);
 int sems_up(int sem, int isMutex);
 int sems_init(int sem, int value, int isMutex);

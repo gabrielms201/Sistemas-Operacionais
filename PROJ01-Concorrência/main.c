@@ -10,6 +10,7 @@ int mutex;
 int semaphores;
 int processCounter;
 
+// The dinning philosophers problem
 int main(int argc, char** argv)
 {
     // Private key, block count, create if doesn't exists, file permissions |  https://man7.org/linux/man-pages/man2/semget.2.html
@@ -42,30 +43,38 @@ int main(int argc, char** argv)
     // Start working foreach process
     startWorking(pid);
 }
+// After finish signal handler
 void afterFinish()
 {
-    // This fucntion is called after a term signal. 
+    // This function is called after a term signal. 
     // Then we each philosopher's info
-    printf("\n");
     printPhilosopherInfo(&(philosophers[processCounter]));
     exit(0);
 }
+// Work foreach philosopher (called foreach child process of the main process)
 void work()
 {
-    signal(SIGINT, afterFinish);
-    // While he didn't eat
+    // 
+    signal(SIGINT, afterFinish); // https://man7.org/linux/man-pages/man2/signal.2.html
     logger(SIMPLE, 0, "Started Working");
     while (true)
     {
-        //logger(SIMPLE, 0, "Currently thinking");
+        // First, he'll think till he get's hungry (trying to eat state)
+        logger(SIMPLE, 0, "Currently thinking");
         sleep(TIME_TO_THINK);
-        //logger(SIMPLE, 0, "Finished Thinking");
+        logger(SIMPLE, 0, "Finished Thinking");
+        // Then he well grab a fork and try to eat
         grabForks();
+        // If he got the forks, then he is eating
         logger(SIMPLE, 0, "Eating");
         sleep(TIME_TO_EAT);
         dropForks();
     }
 }
+// Simple logger function foreach process
+// level : log level
+// isMain : is main process or child
+// message: message to log
 void logger(LogLevel level, int isMain, const char* message)
 {
     const char* processType = (isMain == 0) ? "WORKER" : "MAIN";
@@ -81,6 +90,8 @@ void logger(LogLevel level, int isMain, const char* message)
     }
     
 }
+
+// Filter the process: if is a child one, call work, if is not, wait for the others to finish
 void startWorking(int pid)
 {
     if (pid == 0)
@@ -99,6 +110,7 @@ void startWorking(int pid)
         printPhilosophers(philosophers, PHILOSOPHER_COUNT);
     }
 }
+// Creates N processes (based on philosophers number)
 int createProcesses()
 {
     int pid;
@@ -120,6 +132,7 @@ void printPhilosophers(Philosopher const* arr, int size)
         printPhilosopherInfo(&philosopher);
     }
 }
+// Populate all the philosophers array
 void fillPhilosophers(int quantity)
 {
     for (int i = 0; i < quantity; i++)
@@ -134,6 +147,7 @@ void fillPhilosophers(int quantity)
         philosophers[i] = philosopher;
     }
 }
+// Simple enum to string function
 const char* stateToString(State state)
 {
     switch (state)
@@ -150,17 +164,19 @@ const char* stateToString(State state)
 }
 void printPhilosopherInfo(Philosopher const*  philosopher)
 {
-    printf("Philosofer | [ID: %d] [EATED: %d] [WAITED: %d] [STATE: %s] \n", philosopher->id, philosopher->eated, philosopher->waited, stateToString(philosopher->state));
+    printf("Philosofer | [ID: %d] [EATED: %d] [WAITED: %d] [STATE: %s] \n", 
+            philosopher->id, philosopher->eated, philosopher->waited, stateToString(philosopher->state));
 }
-
+// Current process (philosopher) tries to grab a fork
 void grabForks()
 {
-    sems_down(mutex, true); // down
+    sems_down(mutex, true); // down mutex [critical region]
     philosophers[processCounter].state = TRYING_TO_EAT;
-    tryToEat(processCounter);
-    sems_up(mutex, true); // up;
+    tryToEat(processCounter); // philosopher will now try to eat
+    sems_up(mutex, true); // up mutex [critical region]
     sems_down(processCounter, false); // down | We must wait to grab the forks
 }
+// Current process (philosopher) tries to eat, if it's possible
 void tryToEat(int philosopherProcess)
 {
     int left = (processCounter == 0 ) ? PHILOSOPHER_COUNT-1 : processCounter-1;
@@ -181,22 +197,24 @@ void tryToEat(int philosopherProcess)
         philosophers[philosopherProcess].waited+=1;
     }
 }
+// Current process (philosopher) drops his forks after eating
 void dropForks()
 {
     int right = (processCounter+1) % PHILOSOPHER_COUNT;
     int left = (processCounter == 0 ) ? processCounter : processCounter-1;
     sems_down(mutex, true); // down
     philosophers[processCounter].state = THINKING;
-    tryToEat(left);
-    tryToEat(right);
+    tryToEat(left); // Now we call for the neighbors philosophers
+    tryToEat(right); // // Now we call for the neighbors philosophers
     sems_up(mutex, true); // up
 }
 
-// Since we are working with processes instead of threads, we MUST use semop and semctl
+// Since we are working with processes instead of threads, we had chosen to use semop and semctl
 // We could have used sem_init with pshared, too: https://man7.org/linux/man-pages/man3/sem_init.3.html 
 int sems_init(int sem, int value, int isMutex) // https://man7.org/linux/man-pages/man2/semctl.2.html
 {
     int err;
+    // Control operation. Set shared memory value of sem
     if (isMutex) 
         err = semctl(mutex, sem, SETVAL, value);
     else
@@ -206,7 +224,7 @@ int sems_init(int sem, int value, int isMutex) // https://man7.org/linux/man-pag
 int sems_up(int sem, int isMutex) // https://man7.org/linux/man-pages/man2/semop.2.html
 {
     struct sembuf semops;
-    semops.sem_num = sem;
+    semops.sem_num = sem; // // operating on sem
     semops.sem_op = 1; // 1 : Up | -1: Down
     semops.sem_flg = 0;
     int err;
@@ -219,12 +237,13 @@ int sems_up(int sem, int isMutex) // https://man7.org/linux/man-pages/man2/semop
 int sems_down(int sem, int isMutex) // https://man7.org/linux/man-pages/man2/semop.2.html
 {
     struct sembuf semops;
-    semops.sem_num = sem;
+    semops.sem_num = sem; // operating on sem
     semops.sem_op = -1; // 1 : Up | -1: Down
     semops.sem_flg = 0;
     int err;
+    // Operating the semaphore acording to given values above
     if (isMutex)
-        err = semop(mutex, &semops, 1);
+        err = semop(mutex, &semops, 1); 
     else
         err = semop(semaphores, &semops, 1);
     return err;
