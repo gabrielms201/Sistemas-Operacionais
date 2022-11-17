@@ -164,7 +164,7 @@ int main(int argc, char* argv[])
 	// Caso rode o programa com o prefixo test, ele vai rodar até encontrar um problema de race condition
 	// Se não encontrar, vai rodar infinitamente
 	// Remover o mutex do código forçará a condicao de corrida
-	if (argc == 2 && strcmp(argv[1], "-test") == 0) // se argv[1] == "teste"
+	if (argc == 2 && strcmp(argv[1], "-test") == 0) // se argv[1] == "-test"
 	{
 		bool shouldStop = false;
 		while (!shouldStop)
