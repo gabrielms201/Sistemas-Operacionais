@@ -22,7 +22,7 @@ public:
 	// Verifica se o objeto consegue pagar com base no valor inserido
 	bool CanPay(unsigned int ammount)
 	{
-		// verifica se o quanto quer transferir È maior que o saldo
+		// verifica se o quanto quer transferir √© maior que o saldo
 		if (ammount > _balance)
 		{
 			std::cout << "WARNING: AccountNumber: "
@@ -66,7 +66,7 @@ public:
 
 	unsigned int GetBalance() { return _balance; }
 private:
-	// privado: essa funcao n„o È segura para thread
+	// privado: essa funcao n√£o √© segura para thread
 	bool From(Account* sender, unsigned int ammount)
 	{
 		_balance += ammount;
@@ -108,8 +108,8 @@ bool test()
 void run()
 {
 	std::vector<Account*> accounts;
-	Account a1 = Account(1, 1000);
-	Account a2 = Account(2, 100);
+	Account a1 = Account(1, 1000); //from
+	Account a2 = Account(2, 100);  //to
 	std::vector<std::thread> pool;
 
 	// adiciona o endereco das contas no vetor de enderecos 
@@ -161,15 +161,15 @@ void run()
 int main(int argc, char* argv[])
 {
 	// Modo de teste.
-	// Caso rode o programa com o prefixo test, ele vai rodar atÈ encontrar um problema de race condition
-	// Se n„o encontrar, vai rodar infinitamente
-	// Remover o mutex do cÛdigo forÁar· a condicao de corrida
+	// Caso rode o programa com o prefixo test, ele vai rodar at√© encontrar um problema de race condition
+	// Se n√£o encontrar, vai rodar infinitamente
+	// Remover o mutex do c√≥digo for√ßar√° a condicao de corrida
 	if (argc == 2 && strcmp(argv[1], "-test") == 0) // se argv[1] == "teste"
 	{
 		bool shouldStop = false;
 		while (!shouldStop)
 		{
-			// deve continuar atÈ o teste falhar (not test)
+			// deve continuar at√© o teste falhar (not test)
 			shouldStop = !test();
 		}
 		std::cout << "RACE CONDITION!!!!";
