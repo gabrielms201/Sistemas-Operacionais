@@ -14,7 +14,7 @@ para executar, basta rodar:
 # Comprovando que os resultados propostos foram alcançados
 Para comprovar há o modo teste no código.
 O teste tem um conceito simples: 
-Ele vai realizar transações, e verificar se o saldo de cad aconta é o esperado.
+Ele vai realizar transações, e verificar se o saldo de cada conta é o esperado.
 Esse teste vai rodar até que aconteça alguma condição de corrida. Se não parar, e por que não temos condição de corrida.
 Comentar o mutex do código fará o teste detectar uma race condition. Caso o contrário, não acontecerá.
 
