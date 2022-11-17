@@ -15,12 +15,12 @@ std::mutex g_mtx;
 class Account
 {
 public:
-	Account(unsigned int accountNumber, unsigned long long balance)
+	Account(unsigned int accountNumber, unsigned long long balance) // Feito pelo Ricardo
 		: _accountNumber(accountNumber), _balance(balance)
 	{
 	}
 	// Verifica se o objeto consegue pagar com base no valor inserido
-	bool CanPay(unsigned int ammount)
+	bool CanPay(unsigned int ammount) // Feito pelo Ricardo
 	{
 		// verifica se o quanto quer transferir é maior que o saldo
 		if (ammount > _balance)
@@ -31,13 +31,13 @@ public:
 		}
 		return true;
 	}
-	unsigned long long WithdrawMoney(unsigned int ammount)
+	unsigned long long WithdrawMoney(unsigned int ammount) // feito pelo Ricardo
 	{
 		_balance -= ammount;
 		return _balance;
 	}
 
-	bool To(Account* destination, unsigned int ammount)
+	bool To(Account* destination, unsigned int ammount) // Feito pelo Gabriel  
 	{
 		// Critical Region
 		g_mtx.lock();
@@ -48,7 +48,7 @@ public:
 			return false;
 		}
 
-		destination->From(this, ammount);
+		destination->From(this, ammount); // conta que vai receber chama o metodo to, passando quem envia como parametro
 		WithdrawMoney(ammount);
 		std::cout << "[To]::Account [" << _accountNumber << "]" << " sending R$: " << ammount << " to " << destination->GetAccountNumber() << std::endl;
 		// Leaving
@@ -57,7 +57,7 @@ public:
 
 	}
 
-	void ShowInfo()
+	void ShowInfo() // Feito pelo Paulo
 	{
 		std::cout << "AccountNumber: " << _accountNumber << std::endl << "\t->Balance: " << _balance << std::endl;
 	}
@@ -67,7 +67,7 @@ public:
 	unsigned int GetBalance() { return _balance; }
 private:
 	// privado: essa funcao não é segura para thread
-	bool From(Account* sender, unsigned int ammount)
+	bool From(Account* sender, unsigned int ammount) // Feito pelo Gabriel
 	{
 		_balance += ammount;
 		std::cout << "[From]::Account [" << _accountNumber << "]" << " receiving R$: " << ammount << " from " << sender->GetAccountNumber() << std::endl;
@@ -77,7 +77,7 @@ private:
 	unsigned int _accountNumber;
 };
 
-bool test()
+bool test() // Funcao feita pelo Ricardo
 {
 	Account a1 = Account(1, 500);
 	Account a2 = Account(2, 300);
@@ -105,7 +105,7 @@ bool test()
 	return a1.GetBalance() == account1ExepectedBalance && a2.GetBalance() == account2ExepectedBalance;
 }
 
-void run()
+void run() // Funcao feita por Paulo
 {
 	std::vector<Account*> accounts;
 	Account a1 = Account(1, 1000); //from
