@@ -25,6 +25,329 @@ Como rodar o modo teste:
 ./programa -test
 ```
 
+Execução normal:
+```
+Balance before transactions: 
+AccountNumber: 1
+    ->Balance: 1000
+
+AccountNumber: 2
+    ->Balance: 100
+
+<----------->
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[Thread Init] sending 10 from 1 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[Thread Init] sending 10 from 1 to 2
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[Thread Init] sending 10 from 1 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[Thread Init] sending 10 from 1 to 2
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+[From]::Account [2] receiving R$: 10 from 1
+[To]::Account [1] sending R$: 10 to 2
+<----------->
+
+Balance after transactions: 
+AccountNumber: 1
+    ->Balance: 0
+
+AccountNumber: 2
+    ->Balance: 1100
+
+<----------->
+
+```
+
 # Explicação
 
 Foi resolvido o problema de concorrência atráves de um mutex global, que é travado ao entrar numa região crítica. Com isso, as demais threads aguardarâo a liberação do mutex para continuar a execução.
